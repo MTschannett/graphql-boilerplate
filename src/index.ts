@@ -1,6 +1,25 @@
 import Server from './Server';
+import * as dotenv from 'dotenv';
+import ConnectionService from './database/database-service';
+import Book from './entities/Book'
 
-const server = new Server();
+class App {
+    private server: Server;
 
-server.applyRoutes();
-server.run();
+    constructor() {
+        this.server = new Server();
+    }
+
+    bootstrap() {
+        this.getConfig();
+        this.server.run();
+    }
+
+    getConfig() {
+        dotenv.config();
+    }
+}
+
+const app = new App();
+
+app.bootstrap();

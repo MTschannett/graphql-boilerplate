@@ -7,9 +7,12 @@ import * as chalk from 'chalk'
 
 export default class Server {
     private app: express.Application;
+    private _port: number;
 
     constructor() {
         this.app = express();
+
+        this.applyRoutes;
     }
 
     applyRoutes(): void {
@@ -22,7 +25,7 @@ export default class Server {
 
     run(): void {
         // TODO set this with env variables
-        this.app.listen(4000, this.notifyExpressStatus);
+        this.app.listen(this.port, this.notifyExpressStatus);
     }
 
     notifyExpressStatus(error: Error): any {
@@ -32,5 +35,9 @@ export default class Server {
         } else {
           console.log(chalk.blue(`Server started, http://localhost:${4000}/graphql`))
         }
+    }
+
+    private get port(): number {
+        return parseInt(process.env.port);
     }
 }

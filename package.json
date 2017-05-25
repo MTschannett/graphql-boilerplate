@@ -4,11 +4,15 @@
     "description": "A simple boilerplate for graphql with authentication",
     "main": "index.js",
     "dependencies": {
+        "@types/dotenv": "^4.0.0",
         "body-parser": "^1.17.2",
+        "dotenv": "^4.0.0",
         "express": "^4.15.3",
         "graphql": "^0.9.6",
         "graphql-server-express": "^0.7.2",
-        "graphql-tools": "^0.11.0"
+        "graphql-tools": "^0.11.0",
+        "sqlite3": "^3.1.8",
+        "typeorm": "^0.0.11"
     },
     "devDependencies": {
         "@types/bcrypt": "^1.0.0",

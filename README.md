@@ -45,11 +45,11 @@ The database is installed as default database in this project. If you don't want
 ### Example Config
 This example config can be pasted straight into the .env file to test.
 For more information about the configuring databases have a look at the [docs of typeorm](https://typeorm.github.io/connection.html#connection-environment-variables)
-`
+```
     TYPEORM_DRIVER_TYPE=sqlite
     TYPEORM_STORAGE=database.db
     TYPEORM_ENTITIES=src/entities/*.ts
     TYPEORM_AUTO_SCHEMA_SYNC=true
     TYPEORM_LOGGING_QUERIES=true
     TYPEORM_LOGGING_FAILED_QUERIES=true
-`
+```

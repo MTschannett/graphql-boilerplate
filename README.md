@@ -18,7 +18,7 @@ This boilerplate is in heavy development. More features will be added over time:
 To use this boilerplate following steps have to be done:
 - Clone this project
 - Install dependecies `npm install` or `yarn`
-- Create and configure app [Configuration](#Configuration)
+- Create and configure app. [Configuration](#configuration)
 - Start dev mode `npm run dev` or `yarn run dev`
 
 ## Dependencies

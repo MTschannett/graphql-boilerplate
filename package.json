@@ -51,7 +51,7 @@
         "typescript": "^2.1.5"
     },
     "scripts": {
-        "dev": "cross-env NODE_ENV=dev PORT=8090 nodemon -e ts --exec \"ts-node src/index.ts\"",
+        "dev": "cross-env NODE_ENV=dev nodemon -e ts --exec \"ts-node src/index.ts\"",
         "start": "nodemon build/index.js",
         "build": "tsc src/index.ts",
         "cover": "nyc npm test",

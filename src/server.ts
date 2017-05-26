@@ -12,7 +12,7 @@ export default class Server {
     constructor() {
         this.app = express();
 
-        this.applyRoutes;
+        this.applyRoutes();
     }
 
     applyRoutes(): void {
@@ -33,7 +33,7 @@ export default class Server {
           console.error(chalk.red('could not start server'))
           console.error(chalk.red(error.message))
         } else {
-          console.log(chalk.blue(`Server started, http://localhost:${4000}/graphql`))
+          console.log(chalk.blue(`Server started, http://localhost:${this.port}/graphql`))
         }
     }
 

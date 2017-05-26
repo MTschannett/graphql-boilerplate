@@ -13,6 +13,13 @@ const resolver = {
             const repo = await databaseService.getRepository(Book);
             return repo.find()
         }
+    },
+    RootMutation: {
+        async createBook(root:any, args: Object, context: Object) {
+            const repo = await databaseService.getRepository(Book);
+            const book = <Book>args;
+            return repo.persist(book);
+        }
     }
 }
 

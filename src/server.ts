@@ -38,7 +38,6 @@ export default class Server {
     }
 
     private get port(): number {
-        console.log(process.env.port)
         return parseInt(process.env.port);
     }
 }

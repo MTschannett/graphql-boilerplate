@@ -40,7 +40,7 @@ It is easy to use and install:
 
 `npm install sqlite3` or `yarn add sqlite3`.
 
-The database is installed as default database in this project. If you don't want to use it install and remove it.
+The database is installed as default database in this project. If you don't want to use it, uninstall and remove it.
 
 ### Example Config
 This example config can be pasted straight into the .env file to test.

@@ -6,8 +6,11 @@ export default class Book {
     public id: number;
 
     @Column('string')
-    public name: string;
+    public title: string;
 
     @Column('string')
     public description: string;
+
+    @Column('float')
+    public costs: number
 }

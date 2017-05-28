@@ -2,15 +2,15 @@
 
 This is a boilerplate for using Graphql with an orm and authentication.
 
-## TODO
+## Roadmap
 
 This boilerplate is in heavy development. More features will be added over time:
 
 - [x] Basic Express functionality (Routes for graphql, graphiql)
 - [x] Basic orm support (TypeOrm)
 - [x] RootQuery plus example queries
-- [ ] Resolvers
-- [ ] Mutations
+- [x] Resolvers
+- [x] Mutations
 - [ ] Tests
 
 ## Usage

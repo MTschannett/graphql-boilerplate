@@ -13,5 +13,5 @@ const Schema = `
 
 export default makeExecutableSchema({
     typeDefs:[Schema, RootMutation, RootQuery, Types],
-    resolvers: resolver,
+    resolvers: resolver
 })

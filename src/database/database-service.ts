@@ -1,11 +1,22 @@
 import {getConnectionManager, ConnectionManager, Connection, createConnection, Repository} from "typeorm";
 
 export default class DatabaseService {
+    private static _instance: DatabaseService;
     private _connection: Connection;
     private _connectionManger: ConnectionManager;
 
-    constructor() {
+    private constructor() {
         this._connectionManger = getConnectionManager();
+    }
+
+    public static get instance(): DatabaseService {
+        if (this._instance) {
+            return this._instance;
+        }
+
+        this._instance = new DatabaseService();
+
+        return this._instance;
     }
 
      private get connection(): Promise<Connection> {

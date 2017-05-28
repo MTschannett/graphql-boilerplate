@@ -1,8 +1,10 @@
-import Book from './types/Book';
+import Book, {BookInput} from './types/Book';
+import Author from './types/Author';
 
 const RootMutation = `
     type RootMutation {
-        createBook(name: String!, description: String, costs: Int): Book
+        createBook(title: String!, description: String, costs: Int): Book
+        createAuthor(name: String!, name: String, biography: String, books: [BookInput]): Author
     }
 `
 

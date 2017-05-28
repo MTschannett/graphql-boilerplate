@@ -1,6 +1,10 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from 'typeorm';
 import Author from './Author'
 
+/**
+ * Database entity to store, create and manipulate data in db.
+ * @return {Book} Book entity with common fields.
+ */
 @Entity()
 export default class Book {
     @PrimaryGeneratedColumn()

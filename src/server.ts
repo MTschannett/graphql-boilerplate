@@ -5,6 +5,9 @@ import * as bodyParser from 'body-parser';
 import schema from './schema/Schema';
 import * as chalk from 'chalk'
 
+/**
+ * Server abstraction to handle startup and configuration.
+ */
 export default class Server {
     private app: express.Application;
     private _port: number;
@@ -15,6 +18,9 @@ export default class Server {
         this.applyRoutes();
     }
 
+    /**
+     * Applies routes to server.
+     */
     applyRoutes(): void {
         this.app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 
@@ -23,12 +29,18 @@ export default class Server {
         }))
     }
 
+    /**
+     * Starts server.
+     */
     run(): void {
-        // TODO set this with env variables
-        this.app.listen(this.port, this.notifyExpressStatus);
+        this.app.listen(this.port, this.notifyExpressStatus.bind(this));
     }
 
-    notifyExpressStatus(error: Error): any {
+    /**
+     * Hanlder for error callback of express when starting to listen.
+     * @param  {Error} error Description of causing mistakes
+     */
+    notifyExpressStatus(error: Error): void {
         if (error) {
           console.error(chalk.red('could not start server'))
           console.error(chalk.red(error.message))
@@ -37,6 +49,10 @@ export default class Server {
         }
     }
 
+    /**
+     * Returns used port of applicaiton.
+     * @return {number} Portnumber
+     */
     private get port(): number {
         return parseInt(process.env.port);
     }

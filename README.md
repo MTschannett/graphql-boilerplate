@@ -2,7 +2,7 @@
 
 This is a boilerplate for using Graphql with an orm and authentication.
 
-## TODO
+## Roadma Roadmap
 
 This boilerplate is in heavy development. More features will be added over time:
 

@@ -4,7 +4,7 @@ import Author from '../../entities/Author';
 
 const databaseService = DatabaseService.instance;
 
-const resolver = {
+const MainResolver = {
     RootQuery: {
         async getBook(root: any, args: any) {
             const repo = await databaseService.getRepository(Book);
@@ -33,4 +33,4 @@ const resolver = {
     }
 }
 
-export default resolver;
+export default MainResolver;

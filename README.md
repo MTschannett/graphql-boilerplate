@@ -2,6 +2,8 @@
 
 This is a boilerplate for using Graphql with an orm and authentication.
 
+A quick documenation about folder structures and some pitfalls I have entcountered can be found ()[]
+
 ## Roadmap
 
 This boilerplate is in heavy development. More features will be added over time:

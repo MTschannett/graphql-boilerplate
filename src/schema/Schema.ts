@@ -2,7 +2,7 @@ import RootQuery from './RootQuery';
 import RootMutation from './RootMutation';
 import {makeExecutableSchema} from 'graphql-tools';
 import Types from './types/index';
-import resolver from './resolvers/BookResolver'
+import MainResolver from './resolvers/MainResolver'
 
 const Schema = `
     schema {
@@ -13,5 +13,5 @@ const Schema = `
 
 export default makeExecutableSchema({
     typeDefs:[Schema, RootMutation, RootQuery, Types],
-    resolvers: resolver
+    resolvers: MainResolver
 })

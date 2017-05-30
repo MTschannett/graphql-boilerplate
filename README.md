@@ -2,7 +2,7 @@
 
 This is a boilerplate for using Graphql with an orm and authentication.
 
-A quick documenation about folder structures and some pitfalls I have entcountered can be found ()[]
+A quick documenation about folder structures and some pitfalls I have entcountered can be found (Documentation)[./DOCUMENTATION.md]
 
 ## Roadmap
 

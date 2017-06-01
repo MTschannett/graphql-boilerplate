@@ -35,7 +35,7 @@ export async function login(email: string, password: string, req: any): Promise<
 
     return new Promise<User>((resolve, reject) => {
         if (user.comparePasswordsForLogin(password)) {
-            user.token = jwt.sign(user.email, process.env.secret);
+            user.token = jwt.sign({email: user.email, roles: ["test", "maybe tomorrow"]}, process.env.secret);
             resolve(user);
         } else {
             reject(new Error('credentials are wrong'));
@@ -48,3 +48,5 @@ function checkEmailAndPassword(email: string, password: string) {
         throw new Error('Provide all needed credentials!');
     }
 }
+
+// TODO make a logout;

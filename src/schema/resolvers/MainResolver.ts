@@ -36,7 +36,7 @@ const MainResolver = {
             console.log(args)
             return signUp(args.email, args.password, context);
         },
-        async login(root: any, args: any, context: Object) {
+        async login(root: any, args: any, context: any) {
             return login(args.email, args.password, context);
         }
     },

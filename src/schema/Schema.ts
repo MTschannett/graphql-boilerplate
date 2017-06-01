@@ -1,8 +1,10 @@
 import RootQuery from './RootQuery';
+import {Request} from 'express';
 import RootMutation from './RootMutation';
-import {makeExecutableSchema, addSchemaLevelResolveFunction} from 'graphql-tools';
+import {makeExecutableSchema} from 'graphql-tools';
 import Types from './types/index';
 import MainResolver from './resolvers/MainResolver'
+import * as jwt from 'jsonwebtoken';
 
 const Schema = `
     schema {
@@ -11,16 +13,9 @@ const Schema = `
     }
 `
 
-// function authTestFunction(obj:any, args:any, context:any, info:any) {
-//     console.log('in auth test')
-//     console.log(obj, args, context, info)
-// }
-
 let SchemaType =  makeExecutableSchema({
     typeDefs:[Schema, RootMutation, RootQuery, Types],
     resolvers: MainResolver
 });
-
- // addSchemaLevelResolveFunction(SchemaType, authTestFunction)
 
 export default SchemaType;

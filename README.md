@@ -13,6 +13,7 @@ This boilerplate is in heavy development. More features will be added over time:
 - [x] RootQuery plus example queries
 - [x] Resolvers
 - [x] Mutations
+- [ ] Authentication
 - [ ] Tests
 
 ## Usage

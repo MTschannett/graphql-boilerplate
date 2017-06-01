@@ -22,7 +22,10 @@ export default class Server {
      * Applies routes to server.
      */
     applyRoutes(): void {
-        this.app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
+        this.app.use(
+            '/graphql',
+            bodyParser.json(),
+             graphqlExpress(request => ({ schema, context: request })));
 
         this.app.use('/graphiql', graphiqlExpress({
           endpointURL: '/graphql',

@@ -1,13 +1,15 @@
 import DatabaseService from '../../database/database-service';
 import Book from '../../entities/Book';
 import Author from '../../entities/Author';
+import User from '../../entities/User';
+import {signUp, login} from '../../auth/authentication-service';
 
 const databaseService = DatabaseService.instance;
 
 const MainResolver = {
     RootQuery: {
         async getBook(root: any, args: any) {
-            const repo = await databaseService.getRepository(Book);
+            const repo = await databaseService.getRepository<Book>(Book);
             return repo.findOneById(args.id);
         },
         async allBooks(root: any, args: Object) {
@@ -29,6 +31,18 @@ const MainResolver = {
             const repo = await databaseService.getRepository(Author);
             const author = <Author>args;
             return repo.persist(author);
+        },
+        async register(root: any, args: any, context: Object) {
+            console.log(args)
+            return signUp(args.email, args.password, context);
+        },
+        async login(root: any, args: any, context: Object) {
+            return login(args.email, args.password, context);
+        }
+    },
+    User: {
+        password(user: User): string {
+            return user.password;
         }
     }
 }

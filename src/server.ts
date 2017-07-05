@@ -32,7 +32,6 @@ export default class Server {
           console.error(chalk.red('could not start server'))
           console.error(chalk.red(error.message))
         } else {
-
           console.log(chalk.blue(`Server started, http://localhost:${this.port}/graphql`))
         }
     }

@@ -1,14 +1,21 @@
-import RootQuery, {Types} from './types/RootQuery';
+import RootQuery from './RootQuery';
+import {Request} from 'express';
+import RootMutation from './RootMutation';
 import {makeExecutableSchema} from 'graphql-tools';
+import Types from './types/index';
+import MainResolver from './resolvers/MainResolver'
+import * as jwt from 'jsonwebtoken';
 
 const Schema = `
     schema {
         query: RootQuery
+        mutation: RootMutation
     }
 `
 
-export default makeExecutableSchema({
-    typeDefs:[Schema, RootQuery, Types],
-    resolvers: {},
-})
- 
+let SchemaType =  makeExecutableSchema({
+    typeDefs:[Schema, RootMutation, RootQuery, Types],
+    resolvers: MainResolver
+});
+
+export default SchemaType;

@@ -3,6 +3,9 @@ import * as dotenv from 'dotenv';
 import ConnectionService from './database/database-service';
 import Book from './entities/Book'
 
+/**
+ * Encapsulates initialization of server and app.
+ */
 class App {
     private server: Server;
 
@@ -10,12 +13,18 @@ class App {
         this.server = new Server();
     }
 
-    bootstrap() {
+    /**
+     * Bootstraps application and starts it.
+     */
+    bootstrap(): void {
         this.getConfig();
         this.server.run();
     }
 
-    getConfig() {
+    /**
+     * Loads environment configs into app.
+     */
+    getConfig(): void {
         dotenv.config();
     }
 }

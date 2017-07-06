@@ -2,15 +2,18 @@
 
 This is a boilerplate for using Graphql with an orm and authentication.
 
-## TODO
+A quick documenation about folder structures and some pitfalls I have entcountered can be found [Documentation](./DOCUMENTATION.md)
+
+## Roadmap
 
 This boilerplate is in heavy development. More features will be added over time:
 
 - [x] Basic Express functionality (Routes for graphql, graphiql)
 - [x] Basic orm support (TypeOrm)
 - [x] RootQuery plus example queries
-- [ ] Resolvers
-- [ ] Mutations
+- [x] Resolvers
+- [x] Mutations
+- [ ] Authentication
 - [ ] Tests
 
 ## Usage
@@ -40,16 +43,16 @@ It is easy to use and install:
 
 `npm install sqlite3` or `yarn add sqlite3`.
 
-The database is installed as default database in this project. If you don't want to use it uninstall and remove it.
+The database is installed as default database in this project. If you don't want to use it, uninstall and remove it.
 
 ### Example Config
 This example config can be pasted straight into the .env file to test.
 For more information about the configuring databases have a look at the [docs of typeorm](https://typeorm.github.io/connection.html#connection-environment-variables)
 ```
-    TYPEORM_DRIVER_TYPE=sqlite
-    TYPEORM_STORAGE=database.db
-    TYPEORM_ENTITIES=src/entities/*.ts
-    TYPEORM_AUTO_SCHEMA_SYNC=true
-    TYPEORM_LOGGING_QUERIES=true
-    TYPEORM_LOGGING_FAILED_QUERIES=true
+TYPEORM_DRIVER_TYPE=sqlite
+TYPEORM_STORAGE=database.db
+TYPEORM_ENTITIES=src/entities/*.ts
+TYPEORM_AUTO_SCHEMA_SYNC=true
+TYPEORM_LOGGING_QUERIES=true
+TYPEORM_LOGGING_FAILED_QUERIES=true
 ```
